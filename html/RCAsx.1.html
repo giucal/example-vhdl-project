@@ -1,0 +1,27 @@
+<html> <head>
+  <title>
+src/RCAsx/RCAsx.vhd</title></head>
+
+<body>
+<h1>src/RCAsx/RCAsx.vhd</h1>
+<pre>
+<font size=-1>    1</font> <font color=red>library</font> <a href="FA.7.html#8">ieee</a>;
+<font size=-1>    2</font>     <font color=red>use</font> <a href="FA.7.html#8">ieee</a>.<a href="index.html#f11">std_logic_1164</a>.<font color=red>all</font>;
+<font size=-1>    3</font> 
+<font size=-1>    4</font> <font color=green>-- A ripple-carry adder with sign extension.</font>
+<font size=-1>    5</font> <font color=red>entity</font> <a name="100">RCAsx</a> <font color=red>is</font>
+<font size=-1>    6</font>     <font color=red>generic</font> (<a name="122">n</a>: <a href="index.html#f3">positive</a> := 8);
+<font size=-1>    7</font>     <font color=red>port</font>
+<font size=-1>    8</font>     ( <a name="156">a</a>, <a name="159">b</a> : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#122">n</a>-1 <font color=red>downto</font> 0)
+<font size=-1>    9</font>     ; <a name="204">ci</a>   : <font color=red>in</font>  <a href="index.html#f11">std_logic</a>
+<font size=-1>   10</font>     ; <a name="231">s</a>    : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#122">n</a> <font color=red>downto</font> 0)
+<font size=-1>   11</font>     );
+<font size=-1>   12</font> <font color=red>end</font> <font color=red>entity</font>;
+<font size=-1>   13</font> 
+</pre>
+<hr/>
+<p>
+<small>This page was generated using <a href="http://ghdl.free.fr">GHDL 2.0.0-dev (1.0.0.r995.g83a5f964) [Dunoon edition]</a>, a program written by Tristan Gingold
+</p>
+</body>
+</html>

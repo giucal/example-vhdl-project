@@ -1,0 +1,54 @@
+<html> <head>
+  <title>
+src/RCAsx/RCAsx_Tester.vhd</title></head>
+
+<body>
+<h1>src/RCAsx/RCAsx_Tester.vhd</h1>
+<pre>
+<font size=-1>    1</font> <font color=red>library</font> <a href="FA.7.html#8">ieee</a>;
+<font size=-1>    2</font>     <font color=red>use</font> <a href="FA.7.html#8">ieee</a>.<a href="index.html#f11">std_logic_1164</a>.<font color=red>all</font>;
+<font size=-1>    3</font>     <font color=red>use</font> <a href="FA.7.html#8">ieee</a>.<a href="index.html#f13">numeric_std</a>.<font color=red>all</font>;
+<font size=-1>    4</font> 
+<font size=-1>    5</font> <font color=green>-- Pluggable tester for a RCAsx.</font>
+<font size=-1>    6</font> <font color=red>entity</font> <a name="118">RCAsx_Tester</a> <font color=red>is</font>
+<font size=-1>    7</font>     <font color=red>generic</font> (<a name="147">n</a>: <a href="index.html#f3">positive</a> <font color=red>range</font> 1 <font color=red>to</font> 32);
+<font size=-1>    8</font>     <font color=red>port</font>
+<font size=-1>    9</font>     ( <a name="190">a</a>, <a name="193">b</a> : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#147">n</a>-1 <font color=red>downto</font> 0)
+<font size=-1>   10</font>     ; <a name="238">ci</a>   : <font color=red>out</font> <a href="index.html#f11">std_logic</a>
+<font size=-1>   11</font>     ; <a name="265">s</a>    : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#147">n</a> <font color=red>downto</font> 0)
+<font size=-1>   12</font>     );
+<font size=-1>   13</font> <font color=red>end</font> <font color=red>entity</font>;
+<font size=-1>   14</font> 
+<font size=-1>   15</font> <font color=red>architecture</font> <a name="338">Exhaustive</a> <font color=red>of</font> <a href="#118">RCAsx_Tester</a> <font color=red>is</font>
+<font size=-1>   16</font>     <font color=green>-- Input range.</font>
+<font size=-1>   17</font>     <font color=red>subtype</font> <a name="400">RCAsx_input</a> <font color=red>is</font> <a href="index.html#f3">integer</a> <font color=red>range</font> (-2 ** (<a href="#147">n</a>-1))
+<font size=-1>   18</font>                                       <font color=red>to</font> ((2 ** (<a href="#147">n</a>-1)) - 1);
+<font size=-1>   19</font> <font color=red>begin</font>
+<font size=-1>   20</font>     <font color=red>process</font>
+<font size=-1>   21</font>     <font color=red>begin</font>
+<font size=-1>   22</font>         <font color=red>for</font> <a name="544">i</a> <font color=red>in</font> <a href="#400">RCAsx_input</a> <font color=red>loop</font>
+<font size=-1>   23</font>             <font color=red>for</font> <a name="582">j</a> <font color=red>in</font> <a href="#400">RCAsx_input</a> <font color=red>loop</font>
+<font size=-1>   24</font>                 <font color=red>for</font> <a name="624">k</a> <font color=red>in</font> 0 <font color=red>to</font> 1 <font color=red>loop</font>
+<font size=-1>   25</font>                     <a href="#190">a</a>  &lt;= <a href="index.html#f11">std_logic_vector</a>(<a href="index.html#f13">to_signed</a>(<a href="#544">i</a>, <a href="#147">n</a>));
+<font size=-1>   26</font>                     <a href="#193">b</a>  &lt;= <a href="index.html#f11">std_logic_vector</a>(<a href="index.html#f13">to_signed</a>(<a href="#582">j</a>, <a href="#147">n</a>));
+<font size=-1>   27</font>                     <a href="#238">ci</a> &lt;= <font color=blue>'0'</font> <font color=red>when</font> <a href="#624">k</a> = 0 <font color=red>else</font> <font color=blue>'1'</font>;
+<font size=-1>   28</font> 
+<font size=-1>   29</font>                     <font color=red>wait</font> <font color=red>for</font> 1 <a href="index.html#f3">ns</a>;
+<font size=-1>   30</font>                     <font color=red>assert</font> <a href="#265">s</a> = <a href="index.html#f11">std_logic_vector</a>(<a href="index.html#f13">to_signed</a>(<a href="#544">i</a> + <a href="#582">j</a> + <a href="#624">k</a>, <a href="#147">n</a> + 1))
+<font size=-1>   31</font>                         <font color=red>report</font> <font color=blue>"wrong output"</font>
+<font size=-1>   32</font>                         <font color=red>severity</font> <a href="index.html#f3">error</a>;
+<font size=-1>   33</font>                 <font color=red>end</font> <font color=red>loop</font>;
+<font size=-1>   34</font>             <font color=red>end</font> <font color=red>loop</font>;
+<font size=-1>   35</font>         <font color=red>end</font> <font color=red>loop</font>;
+<font size=-1>   36</font> 
+<font size=-1>   37</font>         <font color=red>wait</font>;
+<font size=-1>   38</font>     <font color=red>end</font> <font color=red>process</font>;
+<font size=-1>   39</font> <font color=red>end</font> <font color=red>architecture</font>;
+<font size=-1>   40</font> 
+</pre>
+<hr/>
+<p>
+<small>This page was generated using <a href="http://ghdl.free.fr">GHDL 2.0.0-dev (1.0.0.r995.g83a5f964) [Dunoon edition]</a>, a program written by Tristan Gingold
+</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html> <head>
+  <title>
+src/FA/FA.vhd</title></head>
+
+<body>
+<h1>src/FA/FA.vhd</h1>
+<pre>
+<font size=-1>    1</font> <font color=red>library</font> <a href="#8">ieee</a>;
+<font size=-1>    2</font>     <font color=red>use</font> <a href="#8">ieee</a>.<a href="index.html#f11">std_logic_1164</a>.<font color=red>all</font>;
+<font size=-1>    3</font> 
+<font size=-1>    4</font> <font color=green>-- A full-adder.</font>
+<font size=-1>    5</font> <font color=red>entity</font> <a name="72">FA</a> <font color=red>is</font>
+<font size=-1>    6</font>     <font color=red>port</font>
+<font size=-1>    7</font>     ( <a name="93">a</a>, <a name="96">b</a> : <font color=red>in</font>  <a href="index.html#f11">std_logic</a> <font color=green>-- summands</font>
+<font size=-1>    8</font>     ; <a name="132">ci</a>   : <font color=red>in</font>  <a href="index.html#f11">std_logic</a> <font color=green>-- carry-in</font>
+<font size=-1>    9</font>     ; <a name="171">s</a>    : <font color=red>out</font> <a href="index.html#f11">std_logic</a> <font color=green>-- sum</font>
+<font size=-1>   10</font>     ; <a name="205">co</a>   : <font color=red>out</font> <a href="index.html#f11">std_logic</a> <font color=green>-- carry-out</font>
+<font size=-1>   11</font>     );
+<font size=-1>   12</font> <font color=red>end</font> <font color=red>entity</font>;
+<font size=-1>   13</font> 
+<font size=-1>   14</font> <font color=red>architecture</font> <a name="272">LA</a> <font color=red>of</font> <a href="#72">FA</a> <font color=red>is</font>
+<font size=-1>   15</font> <font color=red>begin</font>
+<font size=-1>   16</font>     <a href="#171">s</a>  &lt;= <a href="#93">a</a> <font color=red>xor</font> <a href="#96">b</a> <font color=red>xor</font> <a href="#132">ci</a>;
+<font size=-1>   17</font>     <a href="#205">co</a> &lt;= (<a href="#93">a</a> <font color=red>and</font> <a href="#96">b</a>) <font color=red>or</font> ((<a href="#93">a</a> <font color=red>xor</font> <a href="#96">b</a>) <font color=red>and</font> <a href="#132">ci</a>);
+<font size=-1>   18</font> <font color=red>end</font> <font color=red>architecture</font>;
+<font size=-1>   19</font> 
+</pre>
+<hr/>
+<p>
+<small>This page was generated using <a href="http://ghdl.free.fr">GHDL 2.0.0-dev (1.0.0.r995.g83a5f964) [Dunoon edition]</a>, a program written by Tristan Gingold
+</p>
+</body>
+</html>

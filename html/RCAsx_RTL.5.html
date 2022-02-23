@@ -1,0 +1,46 @@
+<html> <head>
+  <title>
+src/RCAsx/RCAsx_RTL.vhd</title></head>
+
+<body>
+<h1>src/RCAsx/RCAsx_RTL.vhd</h1>
+<pre>
+<font size=-1>    1</font> <font color=red>architecture</font> <a name="13">RTL</a> <font color=red>of</font> <a href="RCAsx.1.html#100">RCAsx</a> <font color=red>is</font>
+<font size=-1>    2</font>     <font color=red>component</font> <a name="43">FA</a>
+<font size=-1>    3</font>         <font color=red>port</font>
+<font size=-1>    4</font>         ( <a name="69">a</a>, <a name="72">b</a> : <font color=red>in</font>  <a href="index.html#f11">std_logic</a>
+<font size=-1>    5</font>         ; <a name="100">ci</a>   : <font color=red>in</font>  <a href="index.html#f11">std_logic</a>
+<font size=-1>    6</font>         ; <a name="131">s</a>    : <font color=red>out</font> <a href="index.html#f11">std_logic</a>
+<font size=-1>    7</font>         ; <a name="162">co</a>   : <font color=red>out</font> <a href="index.html#f11">std_logic</a>
+<font size=-1>    8</font>         );
+<font size=-1>    9</font>     <font color=red>end</font> <font color=red>component</font>;
+<font size=-1>   10</font> 
+<font size=-1>   11</font>     <font color=red>signal</font> <a name="225">xa</a>, <a name="229">xb</a> : <a href="index.html#f11">std_logic_vector</a>(<a href="RCAsx.1.html#122">n</a> <font color=red>downto</font> 0);   <font color=green>-- Extended operands.</font>
+<font size=-1>   12</font>     <font color=red>signal</font> <a name="299">c</a>      : <a href="index.html#f11">std_logic_vector</a>(<a href="RCAsx.1.html#122">n</a>+1 <font color=red>downto</font> 0); <font color=green>-- Carry bits.</font>
+<font size=-1>   13</font> <font color=red>begin</font>
+<font size=-1>   14</font>     <font color=green>-- Sign extension.</font>
+<font size=-1>   15</font>     <a href="#225">xa</a> &lt;= <a href="RCAsx.1.html#156">a</a>(<a href="RCAsx.1.html#122">n</a>-1) &amp; <a href="RCAsx.1.html#156">a</a>;
+<font size=-1>   16</font>     <a href="#229">xb</a> &lt;= <a href="RCAsx.1.html#159">b</a>(<a href="RCAsx.1.html#122">n</a>-1) &amp; <a href="RCAsx.1.html#159">b</a>;
+<font size=-1>   17</font> 
+<font size=-1>   18</font>     <a href="#299">c</a>(0) &lt;= <a href="RCAsx.1.html#204">ci</a>;
+<font size=-1>   19</font> 
+<font size=-1>   20</font>     <a name="450">ADDERS</a>:
+<font size=-1>   21</font>     <font color=red>for</font> <a name="466">i</a> <font color=red>in</font> 0 <font color=red>to</font> <a href="RCAsx.1.html#122">n</a> <font color=red>generate</font>
+<font size=-1>   22</font>         <a name="495">ADDER</a>:
+<font size=-1>   23</font>         <a href="#43">FA</a> <font color=red>port</font> <font color=red>map</font>
+<font size=-1>   24</font>            ( <a href="#69">a</a>  =&gt; <a href="#225">xa</a>(<a href="#466">i</a>)
+<font size=-1>   25</font>            , <a href="#72">b</a>  =&gt; <a href="#229">xb</a>(<a href="#466">i</a>)
+<font size=-1>   26</font>            , <a href="#100">ci</a> =&gt; <a href="#299">c</a>(<a href="#466">i</a>)
+<font size=-1>   27</font>            , <a href="#131">s</a>  =&gt; <a href="RCAsx.1.html#231">s</a>(<a href="#466">i</a>)
+<font size=-1>   28</font>            , <a href="#162">co</a> =&gt; <a href="#299">c</a>(<a href="#466">i</a>+1)
+<font size=-1>   29</font>            );
+<font size=-1>   30</font>     <font color=red>end</font> <font color=red>generate</font>;
+<font size=-1>   31</font> <font color=red>end</font> <font color=red>architecture</font>;
+<font size=-1>   32</font> 
+</pre>
+<hr/>
+<p>
+<small>This page was generated using <a href="http://ghdl.free.fr">GHDL 2.0.0-dev (1.0.0.r995.g83a5f964) [Dunoon edition]</a>, a program written by Tristan Gingold
+</p>
+</body>
+</html>
