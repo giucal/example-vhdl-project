@@ -1,11 +1,5 @@
-VHDL workbench
-==============
+Example VHDL project (using [my VHDL workbench]).
 
-A [makefile] wrapping [GHDL], [Yosys] and [netlistsvg].
+Describes (and tests) a ripple-carry adder with sign extension.
 
-See an example project [here](https://github.com/giucal/example-vhdl-project).
-
-[makefile]:   Makefile
-[GHDL]:       https://github.com/ghdl/ghdl
-[Yosys]:      https://github.com/YosysHQ/yosys
-[netlistsvg]: https://github.com/nturley/netlistsvg
+[my VHDL workbench]: https://github.com/giucal/vhdl-workbench

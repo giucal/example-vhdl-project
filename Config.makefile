@@ -1,10 +1,10 @@
 # Top unit. Set this to the name of the main unit in the design.
-TOP_UNIT ?=
+TOP_UNIT ?= RCAsx
 # Top architecture. Optional.
-TOP_ARCH ?=
+TOP_ARCH ?= Behavior
 
 # Test-bench unit and architecture.
-TEST_UNIT ?=
+TEST_UNIT ?= RCAsx_Testbench
 TEST_ARCH ?=
 
 # Commands.
