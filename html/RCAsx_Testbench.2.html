@@ -10,62 +10,62 @@ src/RCAsx/RCAsx_Testbench.vhd</title></head>
 <font size=-1>    3</font> 
 <font size=-1>    4</font> <font color=red>entity</font> <a name="55">RCAsx_Testbench</a> <font color=red>is</font>
 <font size=-1>    5</font>     <font color=green>-- Test parameters.</font>
-<font size=-1>    6</font>     <font color=red>generic</font> (<a name="111">n</a>: <a href="index.html#f3">positive</a> := 8);
+<font size=-1>    6</font>     <font color=red>constant</font> <a name="111">n</a>: <a href="index.html#f3">positive</a> := 8;
 <font size=-1>    7</font> <font color=red>end</font> <font color=red>entity</font>;
 <font size=-1>    8</font> 
-<font size=-1>    9</font> <font color=red>architecture</font> <a name="156">Plug</a> <font color=red>of</font> <a href="#55">RCAsx_Testbench</a> <font color=red>is</font>
-<font size=-1>   10</font>     <font color=red>component</font> <a name="197">RCAsx</a>
-<font size=-1>   11</font>         <font color=red>generic</font> (<a name="220">n</a>: <a href="index.html#f3">positive</a>);
+<font size=-1>    9</font> <font color=red>architecture</font> <a name="155">Plug</a> <font color=red>of</font> <a href="#55">RCAsx_Testbench</a> <font color=red>is</font>
+<font size=-1>   10</font>     <font color=red>component</font> <a name="196">RCAsx</a>
+<font size=-1>   11</font>         <font color=red>generic</font> (<a name="219">n</a>: <a href="index.html#f3">positive</a>);
 <font size=-1>   12</font>         <font color=red>port</font>
-<font size=-1>   13</font>         ( <a name="257">a</a>, <a name="260">b</a> : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#220">n</a>-1 <font color=red>downto</font> 0)
-<font size=-1>   14</font>         ; <a name="309">ci</a>   : <font color=red>in</font>  <a href="index.html#f11">std_logic</a>
-<font size=-1>   15</font>         ; <a name="340">s</a>    : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#220">n</a> <font color=red>downto</font> 0)
+<font size=-1>   13</font>         ( <a name="256">a</a>, <a name="259">b</a> : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#219">n</a>-1 <font color=red>downto</font> 0)
+<font size=-1>   14</font>         ; <a name="308">ci</a>   : <font color=red>in</font>  <a href="index.html#f11">std_logic</a>
+<font size=-1>   15</font>         ; <a name="339">s</a>    : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#219">n</a> <font color=red>downto</font> 0)
 <font size=-1>   16</font>         );
 <font size=-1>   17</font>     <font color=red>end</font> <font color=red>component</font>;
 <font size=-1>   18</font> 
-<font size=-1>   19</font>     <font color=red>component</font> <a name="425">RCAsx_Tester</a>
-<font size=-1>   20</font>         <font color=red>generic</font> (<a name="455">n</a>: <a href="index.html#f3">positive</a>);
+<font size=-1>   19</font>     <font color=red>component</font> <a name="424">RCAsx_Tester</a>
+<font size=-1>   20</font>         <font color=red>generic</font> (<a name="454">n</a>: <a href="index.html#f3">positive</a>);
 <font size=-1>   21</font>         <font color=red>port</font>
-<font size=-1>   22</font>         ( <a name="492">a</a>, <a name="495">b</a> : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#455">n</a>-1 <font color=red>downto</font> 0)
-<font size=-1>   23</font>         ; <a name="544">ci</a>   : <font color=red>out</font> <a href="index.html#f11">std_logic</a>
-<font size=-1>   24</font>         ; <a name="575">s</a>    : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#455">n</a> <font color=red>downto</font> 0)
+<font size=-1>   22</font>         ( <a name="491">a</a>, <a name="494">b</a> : <font color=red>out</font> <a href="index.html#f11">std_logic_vector</a>(<a href="#454">n</a>-1 <font color=red>downto</font> 0)
+<font size=-1>   23</font>         ; <a name="543">ci</a>   : <font color=red>out</font> <a href="index.html#f11">std_logic</a>
+<font size=-1>   24</font>         ; <a name="574">s</a>    : <font color=red>in</font>  <a href="index.html#f11">std_logic_vector</a>(<a href="#454">n</a> <font color=red>downto</font> 0)
 <font size=-1>   25</font>         );
 <font size=-1>   26</font>     <font color=red>end</font> <font color=red>component</font>;
 <font size=-1>   27</font> 
-<font size=-1>   28</font>     <font color=red>for</font> <a href="#891">CUT1</a>: <a href="#197">RCAsx</a> <font color=red>use</font> <font color=red>entity</font> <a href="index.html#f1">work</a>.<a href="RCAsx.1.html#100">RCAsx</a>(<a href="RCAsx_RTL.5.html#13">RTL</a>);
-<font size=-1>   29</font>     <font color=red>for</font> <a href="#1078">CUT2</a>: <a href="#197">RCAsx</a> <font color=red>use</font> <font color=red>entity</font> <a href="index.html#f1">work</a>.<a href="RCAsx.1.html#100">RCAsx</a>(<a href="RCAsx_Behavior.4.html#13">Behavior</a>);
+<font size=-1>   28</font>     <font color=red>for</font> <a href="#890">CUT1</a>: <a href="#196">RCAsx</a> <font color=red>use</font> <font color=red>entity</font> <a href="index.html#f1">work</a>.<a href="RCAsx.1.html#100">RCAsx</a>(<a href="RCAsx_RTL.5.html#13">RTL</a>);
+<font size=-1>   29</font>     <font color=red>for</font> <a href="#1077">CUT2</a>: <a href="#196">RCAsx</a> <font color=red>use</font> <font color=red>entity</font> <a href="index.html#f1">work</a>.<a href="RCAsx.1.html#100">RCAsx</a>(<a href="RCAsx_Behavior.4.html#13">Behavior</a>);
 <font size=-1>   30</font> 
-<font size=-1>   31</font>     <font color=red>signal</font> <a name="759">a</a>, <a name="762">b</a>   : <a href="index.html#f11">std_logic_vector</a>(<a href="#111">n</a>-1 <font color=red>downto</font> 0);
-<font size=-1>   32</font>     <font color=red>signal</font> <a name="811">ci</a>     : <a href="index.html#f11">std_logic</a>;
-<font size=-1>   33</font>     <font color=red>signal</font> <a name="842">s1</a>, <a name="846">s2</a> : <a href="index.html#f11">std_logic_vector</a>(<a href="#111">n</a> <font color=red>downto</font> 0);
+<font size=-1>   31</font>     <font color=red>signal</font> <a name="758">a</a>, <a name="761">b</a>   : <a href="index.html#f11">std_logic_vector</a>(<a href="#111">n</a>-1 <font color=red>downto</font> 0);
+<font size=-1>   32</font>     <font color=red>signal</font> <a name="810">ci</a>     : <a href="index.html#f11">std_logic</a>;
+<font size=-1>   33</font>     <font color=red>signal</font> <a name="841">s1</a>, <a name="845">s2</a> : <a href="index.html#f11">std_logic_vector</a>(<a href="#111">n</a> <font color=red>downto</font> 0);
 <font size=-1>   34</font> <font color=red>begin</font>
-<font size=-1>   35</font>     <a name="891">CUT1</a>: <a href="#197">RCAsx</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#220">n</a> =&gt; <a href="#111">n</a>)
+<font size=-1>   35</font>     <a name="890">CUT1</a>: <a href="#196">RCAsx</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#219">n</a> =&gt; <a href="#111">n</a>)
 <font size=-1>   36</font>                 <font color=red>port</font> <font color=red>map</font>
-<font size=-1>   37</font>                 ( <a href="#257">a</a>  =&gt; <a href="#759">a</a>
-<font size=-1>   38</font>                 , <a href="#260">b</a>  =&gt; <a href="#762">b</a>
-<font size=-1>   39</font>                 , <a href="#309">ci</a> =&gt; <a href="#811">ci</a>
-<font size=-1>   40</font>                 , <a href="#340">s</a>  =&gt; <a href="#842">s1</a>
+<font size=-1>   37</font>                 ( <a href="#256">a</a>  =&gt; <a href="#758">a</a>
+<font size=-1>   38</font>                 , <a href="#259">b</a>  =&gt; <a href="#761">b</a>
+<font size=-1>   39</font>                 , <a href="#308">ci</a> =&gt; <a href="#810">ci</a>
+<font size=-1>   40</font>                 , <a href="#339">s</a>  =&gt; <a href="#841">s1</a>
 <font size=-1>   41</font>                 );
-<font size=-1>   42</font>     <a name="1078">CUT2</a>: <a href="#197">RCAsx</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#220">n</a> =&gt; <a href="#111">n</a>)
+<font size=-1>   42</font>     <a name="1077">CUT2</a>: <a href="#196">RCAsx</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#219">n</a> =&gt; <a href="#111">n</a>)
 <font size=-1>   43</font>                 <font color=red>port</font> <font color=red>map</font>
-<font size=-1>   44</font>                 ( <a href="#257">a</a>  =&gt; <a href="#759">a</a>
-<font size=-1>   45</font>                 , <a href="#260">b</a>  =&gt; <a href="#762">b</a>
-<font size=-1>   46</font>                 , <a href="#309">ci</a> =&gt; <a href="#811">ci</a>
-<font size=-1>   47</font>                 , <a href="#340">s</a>  =&gt; <a href="#846">s2</a>
+<font size=-1>   44</font>                 ( <a href="#256">a</a>  =&gt; <a href="#758">a</a>
+<font size=-1>   45</font>                 , <a href="#259">b</a>  =&gt; <a href="#761">b</a>
+<font size=-1>   46</font>                 , <a href="#308">ci</a> =&gt; <a href="#810">ci</a>
+<font size=-1>   47</font>                 , <a href="#339">s</a>  =&gt; <a href="#845">s2</a>
 <font size=-1>   48</font>                 );
-<font size=-1>   49</font>     <a name="1265">TESTER1</a>: <a href="#425">RCAsx_Tester</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#455">n</a> =&gt; <a href="#111">n</a>)
+<font size=-1>   49</font>     <a name="1264">TESTER1</a>: <a href="#424">RCAsx_Tester</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#454">n</a> =&gt; <a href="#111">n</a>)
 <font size=-1>   50</font>                           <font color=red>port</font> <font color=red>map</font>
-<font size=-1>   51</font>                           ( <a href="#492">a</a>  =&gt; <a href="#759">a</a>
-<font size=-1>   52</font>                           , <a href="#495">b</a>  =&gt; <a href="#762">b</a>
-<font size=-1>   53</font>                           , <a href="#544">ci</a> =&gt; <a href="#811">ci</a>
-<font size=-1>   54</font>                           , <a href="#575">s</a>  =&gt; <a href="#842">s1</a>
+<font size=-1>   51</font>                           ( <a href="#491">a</a>  =&gt; <a href="#758">a</a>
+<font size=-1>   52</font>                           , <a href="#494">b</a>  =&gt; <a href="#761">b</a>
+<font size=-1>   53</font>                           , <a href="#543">ci</a> =&gt; <a href="#810">ci</a>
+<font size=-1>   54</font>                           , <a href="#574">s</a>  =&gt; <a href="#841">s1</a>
 <font size=-1>   55</font>                           );
-<font size=-1>   56</font>     <a name="1522">TESTER2</a>: <a href="#425">RCAsx_Tester</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#455">n</a> =&gt; <a href="#111">n</a>)
+<font size=-1>   56</font>     <a name="1521">TESTER2</a>: <a href="#424">RCAsx_Tester</a> <font color=red>generic</font> <font color=red>map</font> (<a href="#454">n</a> =&gt; <a href="#111">n</a>)
 <font size=-1>   57</font>                           <font color=red>port</font> <font color=red>map</font>
-<font size=-1>   58</font>                           ( <a href="#492">a</a>  =&gt; <a href="#759">a</a>
-<font size=-1>   59</font>                           , <a href="#495">b</a>  =&gt; <a href="#762">b</a>
-<font size=-1>   60</font>                           , <a href="#544">ci</a> =&gt; <a href="#811">ci</a>
-<font size=-1>   61</font>                           , <a href="#575">s</a>  =&gt; <a href="#846">s2</a>
+<font size=-1>   58</font>                           ( <a href="#491">a</a>  =&gt; <a href="#758">a</a>
+<font size=-1>   59</font>                           , <a href="#494">b</a>  =&gt; <a href="#761">b</a>
+<font size=-1>   60</font>                           , <a href="#543">ci</a> =&gt; <a href="#810">ci</a>
+<font size=-1>   61</font>                           , <a href="#574">s</a>  =&gt; <a href="#845">s2</a>
 <font size=-1>   62</font>                           );
 <font size=-1>   63</font> <font color=red>end</font> <font color=red>architecture</font>;
 <font size=-1>   64</font> 

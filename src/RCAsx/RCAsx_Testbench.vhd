@@ -3,7 +3,7 @@ library ieee;
 
 entity RCAsx_Testbench is
     -- Test parameters.
-    generic (n: positive := 8);
+    constant n: positive := 8;
 end entity;
 
 architecture Plug of RCAsx_Testbench is
